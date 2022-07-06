@@ -1,7 +1,7 @@
 export function setTitle(text) {
   const element = document.querySelector(".title");
   element.textContent = text;
-  return element;
+  return text;
 }
 
 setTitle("Some new text");
