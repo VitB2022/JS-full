@@ -15,5 +15,3 @@ export function finishList() {
   list.append(li8);
   return li1, li4, li6, li8;
 }
-
-finishList();
