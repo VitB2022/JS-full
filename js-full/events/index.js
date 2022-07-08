@@ -22,3 +22,9 @@ pElem.addEventListener("click", logGreenP);
 
 spanElem.addEventListener("click", logGreySpan, true);
 spanElem.addEventListener("click", logGreenSpan);
+
+const buttonClear = document.querySelector(".clear-btn");
+function handleClick() {
+  document.querySelector(".events-list").innerHTML = "";
+}
+buttonClear.addEventListener("click", handleClick);
