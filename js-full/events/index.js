@@ -24,7 +24,21 @@ spanElem.addEventListener("click", logGreySpan, true);
 spanElem.addEventListener("click", logGreenSpan);
 
 const buttonClear = document.querySelector(".clear-btn");
+
 function handleClick() {
   document.querySelector(".events-list").innerHTML = "";
 }
+
 buttonClear.addEventListener("click", handleClick);
+
+const buttonRemove = document.querySelector(".remove-handlers-btn");
+
+function removeEventHandler() {
+  divElem.removeEventListener("click", logGreyDiv, true);
+  divElem.removeEventListener("click", logGreenDiv);
+  pElem.removeEventListener("click", logGreyP, true);
+  pElem.removeEventListener("click", logGreenP);
+  spanElem.removeEventListener("click", logGreySpan, true);
+  spanElem.removeEventListener("click", logGreenSpan);
+}
+buttonRemove.addEventListener("click", removeEventHandler);
