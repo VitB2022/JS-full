@@ -1,5 +1,3 @@
-'use strict';
-
 const tasks = [
   {
     text: 'Buy milk',
@@ -34,10 +32,10 @@ const renderTasks = tasksList => {
 
       const checkboxElem = document.createElement('input');
       checkboxElem.setAttribute('type', 'checkbox');
-      checkboxElem.setAttribute('data-num', i);
+      checkboxElem.setAttribute('data-id', i);
 
-      checkboxElem.addEventListener('click', function (event) {
-        const checkBox = +event.target.dataset.num;
+      const checkBoxChange = event => {
+        const checkBox = +event.target.dataset.id;
 
         if (tasks[checkBox].done) {
           tasks[checkBox].done = false;
@@ -46,7 +44,9 @@ const renderTasks = tasksList => {
         }
         listElem.innerHTML = '';
         renderTasks(tasks);
-      });
+      };
+
+      checkboxElem.addEventListener('click', checkBoxChange);
 
       checkboxElem.checked = done;
       checkboxElem.classList.add('list__item-checkbox');
