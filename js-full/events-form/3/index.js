@@ -43,6 +43,7 @@ const renderTasks = tasksList => {
       return listItemElem;
     });
   listElem.innerHTML = '';
+
   listElem.append(...listItemsElems);
 };
 
@@ -69,7 +70,7 @@ clickButton.addEventListener('click', handlerButton);
 
 const handlerCheckBox = event => {
   let target = event.target;
-  let obj = tasks[target.dataset.i];
+  let obj = tasks[+target.dataset.i];
   if (obj.done === true) obj.done = false;
   else obj.done = true;
 
