@@ -61,20 +61,19 @@ const handlerButton = () => {
     getTask.value = '';
 
     renderTasks(tasks);
-    // console.log(tasks);
+    console.log(tasks);
   }
 };
 
 clickButton.addEventListener('click', handlerButton);
 
-const handlerCheckBox = ({
-  target: {
-    dataset: { i },
-  },
-}) => {
-  tasks[i].done = !tasks[i].done;
+const handlerCheckbox = event => {
+  let target = event.target;
+  let obj = tasks[target.dataset.i];
+  if (obj.done === true) obj.done = false;
+  else obj.done = true;
 
   renderTasks(tasks);
 };
 
-listElem.addEventListener('change', handlerCheckBox);
+listElem.addEventListener('change', handlerCheckbox);
