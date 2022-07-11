@@ -31,20 +31,32 @@ const renderTasks = tasksList => {
     .map(({ text, done }, i) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
+
+      const checkboxElem = document.createElement('input');
+      checkboxElem.setAttribute('type', 'checkbox');
+      checkboxElem.setAttribute('data-num', i);
+
+      checkboxElem.addEventListener('click', function (event) {
+        const checkBox = +event.target.dataset.num;
+
+        if (tasks[checkBox].done) {
+          tasks[checkBox].done = false;
+        } else {
+          tasks[checkBox].done = true;
+        }
+        listElem.innerHTML = '';
+        renderTasks(tasks);
+      });
+
+      checkboxElem.checked = done;
+      checkboxElem.classList.add('list__item-checkbox');
       if (done) {
         listItemElem.classList.add('list__item_done');
       }
-      const checkboxElem = document.createElement('input');
-      checkboxElem.setAttribute('type', 'checkbox');
-      checkboxElem.setAttribute('data-i', i);
-      checkboxElem.checked = done;
-      checkboxElem.classList.add('list__item-checkbox');
       listItemElem.append(checkboxElem, text);
 
       return listItemElem;
     });
-
-  listElem.innerHTML = '';
 
   listElem.append(...listItemsElems);
 };
@@ -52,31 +64,18 @@ const renderTasks = tasksList => {
 renderTasks(tasks);
 
 const clickButton = document.querySelector('.create-task-btn');
+const getTask = document.querySelector('.task-input');
 
 const handlerButton = () => {
-  const getTask = document.querySelector('.task-input');
-  let text = getTask.value;
-  if (text) {
-    tasks.push({
-      text,
-      done: false,
-    });
-    getTask.value = '';
-
-    renderTasks(tasks);
-    // console.log(tasks);
+  if (!getTask.value) {
+    return;
   }
-};
-
-clickButton.addEventListener('click', handlerButton);
-
-const handlerCheckBox = event => {
-  let s = +event.target.dataset.i;
-  let obj = tasks[s];
-  if (obj.done === true) obj.done = false;
-  else obj.done = true;
+  const createTask = { text: getTask.value, done: false };
+  tasks.push(createTask);
+  getTask.value = '';
+  listElem.innerHTML = '';
 
   renderTasks(tasks);
 };
 
-listElem.addEventListener('change', handlerCheckBox);
+clickButton.addEventListener('click', handlerButton);
