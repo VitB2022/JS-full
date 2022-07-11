@@ -43,6 +43,7 @@ const renderTasks = tasksList => {
 
       return listItemElem;
     });
+
   listElem.innerHTML = '';
 
   listElem.append(...listItemsElems);
