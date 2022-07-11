@@ -8,7 +8,7 @@ export const getDiff = (startDate, endDate) => {
   difference -= hours * (1000 * 60 * 60);
   let minutes = Math.round(difference / (1000 * 60));
   difference -= minutes * (1000 * 60);
-  let seconds = Math.round(difference);
+  let seconds = difference / 1000;
 
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
