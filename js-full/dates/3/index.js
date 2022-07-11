@@ -9,6 +9,3 @@ export const getDiff = (startDate, endDate) => {
 
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
-
-// console.log(getDiff(new Date(1999, 12, 18, 3, 25, 0), new Date(1993, 8, 9, 1, 2, 0)));
-// console.log(getDiff(new Date(1993, 8, 9, 1, 2, 0), new Date(1999, 12, 18, 3, 25, 0)));
