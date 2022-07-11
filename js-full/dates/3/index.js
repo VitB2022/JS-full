@@ -1,4 +1,4 @@
-export const getDiff = (startDate, endDate) => {
+const getDiff = (startDate, endDate) => {
   let date1 = new Date(startDate);
   let date2 = new Date(endDate);
   let difference = Math.abs(date1 - date2);
@@ -8,7 +8,7 @@ export const getDiff = (startDate, endDate) => {
   difference -= hours * (1000 * 60 * 60);
   let minutes = Math.round(difference / (1000 * 60));
   difference -= minutes * (1000 * 60);
-  let seconds = difference;
+  let seconds = Math.round(difference);
 
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
