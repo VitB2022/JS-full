@@ -64,14 +64,15 @@ const handlerButton = () => {
     getTask.value = '';
 
     renderTasks(tasks);
-    // console.log(tasks);
+    //console.log(tasks);
   }
 };
 
 clickButton.addEventListener('click', handlerButton);
 
 const handlerCheckBox = event => {
-  let obj = tasks[Number(event.target.dataset.i)];
+  let s = +event.target.dataset.i;
+  let obj = tasks[s];
   if (obj.done === true) obj.done = false;
   else obj.done = true;
 
