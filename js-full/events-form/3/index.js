@@ -37,7 +37,7 @@ const renderTasks = tasksList => {
       const checkboxElem = document.createElement('input');
       checkboxElem.setAttribute('type', 'checkbox');
       checkboxElem.checked = done;
-      checkboxElem.dataset.i = i;
+      checkboxElem.dataset.i = Number(i);
       checkboxElem.classList.add('list__item-checkbox');
       listItemElem.append(checkboxElem, text);
 
@@ -71,8 +71,7 @@ const handlerButton = () => {
 clickButton.addEventListener('click', handlerButton);
 
 const handlerCheckBox = event => {
-  let s = +event.target.dataset.i;
-  let obj = tasks[s];
+  let obj = tasks[event.target.dataset.i];
   if (obj.done === true) obj.done = false;
   else obj.done = true;
 
