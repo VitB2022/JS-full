@@ -70,7 +70,7 @@ const handlerButton = () => {
 
 clickButton.addEventListener('click', handlerButton);
 
-const handlerCheckbox = event => {
+const handlerCheckBox = event => {
   let target = event.target;
   let i = target.dataset.i;
   let obj = tasks[i];
@@ -79,4 +79,4 @@ const handlerCheckbox = event => {
   renderTasks(tasks);
 };
 
-listElem.addEventListener('change', handlerCheckbox);
+listElem.addEventListener('change', handlerCheckBox);
