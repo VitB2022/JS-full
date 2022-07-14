@@ -1,6 +1,4 @@
 export const shmoment = initValue => {
-  initValue = new Date(initValue);
-
   const newValue = {
     add(dateInterval, number) {
       switch (dateInterval) {
