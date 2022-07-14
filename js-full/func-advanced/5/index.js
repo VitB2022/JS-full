@@ -1,4 +1,6 @@
 export const shmoment = initValue => {
+  initValue = new Date(initValue);
+
   const newValue = {
     add(dateInterval, number) {
       switch (dateInterval) {
@@ -55,14 +57,7 @@ export const shmoment = initValue => {
     },
 
     result() {
-      return initValue.toLocaleString('en', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-      });
+      return initValue;
     },
   };
   return newValue;
