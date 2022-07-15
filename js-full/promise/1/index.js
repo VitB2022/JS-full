@@ -16,10 +16,10 @@ export const addImage = imgSrc => {
   return p;
 };
 
-const resultPromise = addImage(
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
-);
+// const resultPromise = addImage(
+//  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
+// );
 
-resultPromise.then(data => console.log(data));
+// resultPromise.then(data => console.log(data));
 
-console.log(resultPromise);
+// console.log(resultPromise);
