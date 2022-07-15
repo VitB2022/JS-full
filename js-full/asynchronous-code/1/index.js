@@ -14,13 +14,12 @@ export const addImage = (imgSrc, callback) => {
 };
 
 // callack function
-const onImageLoaded = (error, imgElem) => {
+const onImageLoaded = (error, data) => {
   if (error) {
-    console.log(error);
     return;
   }
 
-  const { width, height } = imgElem;
+  const { width, height } = data;
   const sizeElem = document.querySelector('.image-size');
 
   sizeElem.textContent = `${width} x ${height}`;
