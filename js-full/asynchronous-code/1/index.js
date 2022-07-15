@@ -13,12 +13,12 @@ export const addImage = (imgSrc, callback) => {
 };
 const imgSrc =
   'https://gromcode.s3.eu-central-1.aazonaws.com/front-end/html-css/lesson24/hw1/illustration-window.png';
-const onImageLoaded = (error, data) => {
+const onImageLoaded = (error, imgElem) => {
   if (error) {
     console.log(error);
     return;
   }
-  const { width, height } = data;
+  const { width, height } = imgElem;
   const sizeElem = document.querySelector('.image-size');
   sizeElem.textContent = `${width} x ${height}`;
 };
