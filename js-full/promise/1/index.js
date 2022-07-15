@@ -11,7 +11,7 @@ export const addImage = imgSrc => {
     };
     imgElem.addEventListener('load', onImageLoaded);
 
-    imgElem.addEventListener('error', () => reject(new Error('Image load is failed...')));
+    imgElem.addEventListener('error', () => reject(new Error('Image load is failed')));
   });
   return p;
 };
@@ -22,4 +22,4 @@ const resultPromise = addImage(
 
 resultPromise.then(data => console.log(data));
 
-// console.log(resultPromise);
+console.log(resultPromise);
