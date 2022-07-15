@@ -38,7 +38,7 @@ export const shmoment = initValue => {
           initValue.setMonth(initValue.getMonth() - number);
           break;
         case 'days':
-          initValue.setDate(initValue.getDay() - number);
+          initValue.setDate(initValue.getDate() - number);
           break;
         case 'hours':
           initValue.setHours(initValue.getHours() - number);
