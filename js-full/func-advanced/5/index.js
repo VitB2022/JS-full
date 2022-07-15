@@ -11,7 +11,7 @@ export const shmoment = initValue => {
           initValue.setMonth(initValue.getMonth() + number);
           break;
         case 'days':
-          initValue.setDate(initValue.getDay() + number);
+          initValue.setDate(initValue.getDate() + number);
           break;
         case 'hours':
           initValue.setHours(initValue.getHours() + number);
@@ -64,9 +64,9 @@ export const shmoment = initValue => {
 };
 
 // const res = shmoment(new Date(2020, 0, 7, 17, 17, 17))
-// .add('minutes', 2)
-// .add('days', 8)
-// .subtract('years', 1)
-// .result(); // ...Jan 15 2019 17:19:17...
+//  .add('minutes', 78)
+//  .add('days', 8)
+//  .subtract('years', 1)
+//  .result(); // ...Jan 15 2019 17:19:17...
 
 // console.log(res);
