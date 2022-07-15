@@ -22,4 +22,4 @@ const resultPromise = addImage(
 
 resultPromise.then(data => console.log(data));
 
-console.log(resultPromise);
+// console.log(resultPromise);
