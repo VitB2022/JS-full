@@ -3,7 +3,7 @@ export const asyncCalculator = numbr =>
     setTimeout(() => {
       console.log(`Initial value: ${numbr}`);
       resolve(numbr);
-    }, 3000);
+    }, 500);
   })
     .then(
       value =>
@@ -12,7 +12,7 @@ export const asyncCalculator = numbr =>
             const result = value * value;
             console.log(`Squared value: ${result}`);
             resolve(result);
-          }, 3000);
+          }, 500);
         }),
     )
     .then(value => {
