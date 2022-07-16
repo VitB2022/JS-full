@@ -21,4 +21,4 @@ export const asyncCalculator = numbr =>
       return result;
     });
 
-// asyncCalculator(5).then(value => console.log(value));
+asyncCalculator(5).then(value => console.log(value));
