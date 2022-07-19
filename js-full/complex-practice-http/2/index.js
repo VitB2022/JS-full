@@ -10,7 +10,7 @@ export function getUserById(userId) {
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-  });
+  }).then(response => response.json());
 }
 
 export function createUser(userData) {
