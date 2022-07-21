@@ -14,8 +14,7 @@ const failRequest = Promise.reject(new Error('Something went wrong'));
 failRequest
   .catch(function onError2(error) {
     console.error('onError2', error.message);
-    console.log('Server error');
-    return error;
+    console.log('Server error', error);
   })
   .then(function onSuccess2(data) {
     console.log('onSuccess2', data);
