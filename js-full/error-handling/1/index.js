@@ -1,18 +1,27 @@
 window.addEventListener('error', function onUnhandledError(e) {
-  console.log(e);
+  console.error('error', e.message);
 });
 
+let userParsingResult;
+
 try {
-  const jsonString = '{"name":"Tom"'; // invalid JSON
-  throw new ReferenceError();
-  const userData = JSON.parse(jsonString);
-  console.log(userData);
-} catch (err) {
-  if (err instanceof SyntaxError) {
-    console.error('Handled');
-  } else {
-    throw err;
-  }
+  const user = JSON.parse('{"name":"Tom"}');
+  console.log('User data: ', user);
+  userParsingResult = 'success';
+} catch (e) {
+  userParsingResult = 'error';
 } finally {
-  console.log('Some actions');
+  console.log(`User parsing finished with ${userParsingResult}`);
+}
+
+let productParsingResult;
+
+try {
+  const product = JSON.parse('{"name":"Tom"');
+  console.log('Product data: ', product);
+  productParsingResult = 'success';
+} catch (e) {
+  productParsingResult = 'error';
+} finally {
+  console.log(`Product parsing finished with ${productParsingResult}`);
 }
