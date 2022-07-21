@@ -2,7 +2,7 @@ const successRequest = Promise.resolve({ name: 'Tom' });
 
 successRequest
   .then(function onSuccess1(data) {
-    throw new Error('Unexpected error');
+    throw new Error('Error with data');
   })
   .catch(function onError1(error) {
     console.error('onError1', error.message);
@@ -19,5 +19,5 @@ failRequest
     console.log('onSuccess2', data);
   })
   .catch(function onError3(error) {
-    console.error('onError3', error.message);
+    console.error('Server error', error.message);
   });
