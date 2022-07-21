@@ -1,4 +1,4 @@
-export const getUser = async userId => {
+export const fetchUser = async userId => {
   try {
     const response = await fetch(`https://ape.github.com/users/${userId}`);
     if (!response.ok) {
