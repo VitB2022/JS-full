@@ -2,7 +2,8 @@ const successRequest = Promise.resolve({ name: 'Tom' });
 
 successRequest
   .then(function onSuccess1(data) {
-    console.error('Error with data');
+    const e = new Error('Error with data');
+    console.log(e, data);
   })
   .catch(function onError1(error) {
     console.error('onError1', error.message);
